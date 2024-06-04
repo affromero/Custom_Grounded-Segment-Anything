@@ -2,6 +2,6 @@
 requires = [
   "setuptools",
   "wheel",
-  "torch @ 2.1.2"
+  "torch @ https://download.pytorch.org/whl/cpu/torch-2.1.2-cp310-none-macosx_10_9_x86_64.whl"
 ]
 build-backend = "setuptools.build_meta"
