@@ -24,8 +24,8 @@ import glob
 import os
 import subprocess
 
-import torch
 from setuptools import find_packages, setup
+import torch
 from torch.utils.cpp_extension import CUDA_HOME, CppExtension, CUDAExtension
 
 # groundingdino version info
