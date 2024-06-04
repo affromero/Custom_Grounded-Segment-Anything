@@ -22,10 +22,16 @@
 
 import glob
 import os
+from re import sub
 import subprocess
+import sys
 
+try:
+    import torch
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "torch == 2.1.2"])
+    import torch
 from setuptools import find_packages, setup
-import torch
 from torch.utils.cpp_extension import CUDA_HOME, CppExtension, CUDAExtension
 
 # groundingdino version info
