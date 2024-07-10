@@ -29,10 +29,10 @@ try:
     import torch
 except ImportError:
     subprocess.check_call([sys.executable, "-m", "ensurepip"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "setuptools<70"]) # ImportError: cannot import name 'packaging' from 'pkg_resources'
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "torch @ https://download.pytorch.org/whl/cu121/torch-2.1.2%2Bcu121-cp310-cp310-linux_x86_64.whl"])
+    # subprocess.check_call([sys.executable, "-m", "pip", "install", "setuptools<70"]) # ImportError: cannot import name 'packaging' from 'pkg_resources'
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "setuptools<70 numpy<2 torch @ https://download.pytorch.org/whl/cu121/torch-2.1.2%2Bcu121-cp310-cp310-linux_x86_64.whl"])
     # subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy", "--upgrade"])
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy<2"])
+    # subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy<2"])
     import torch
 from setuptools import find_packages, setup
 from torch.utils.cpp_extension import CUDA_HOME, CppExtension, CUDAExtension
