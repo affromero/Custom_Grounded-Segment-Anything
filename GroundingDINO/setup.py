@@ -28,6 +28,7 @@ import sys
 try:
     import torch
 except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "setuptools==69.5.1"])
     subprocess.check_call([sys.executable, "-m", "pip", "install", "torch @ https://download.pytorch.org/whl/cu121/torch-2.1.2%2Bcu121-cp310-cp310-linux_x86_64.whl"])
     subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy", "--upgrade"])
     import torch
